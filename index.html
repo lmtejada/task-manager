@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task Management App</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+    <section class="section">
+
+        <div class="container is-fluid">
+            <div class="content is-medium">
+                <h1 class="title">Task Manager App</h1>
+                <p>
+                    Welcome! Click on the button for starting! 
+                    <button class="button is-primary is-pulled-right" id="add-task">Add a task</button>
+                </p>
+                <br>
+            </div>
+
+            <div id="task-list" class="columns is-multiline"></div>
+        </div>
+
+    </section>
+
+    <div class="modal">
+
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Add a new task</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+
+            <section class="modal-card-body">
+                <div>
+                    <div class="field">
+                        <label class="label">
+                            Title
+                            <span class="help is-danger required-field">*</span>
+                        </label>
+                        <div class="control">
+                            <input id="task-title" class="input" type="text">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">
+                            Description
+                            <span class="help is-danger required-field">*</span>
+                        </label>
+                        <div class="control">
+                            <textarea id="task-description" class="textarea"></textarea>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="field column is-half">
+                            <label class="label">
+                                Pritority
+                                <span class="help is-danger required-field">*</span>
+                            </label>
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select id="task-priority">
+                                        <option value=""></option>
+                                        <option value="low">Low</option>
+                                        <option value="mid">Medium</option>
+                                        <option value="high">High</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field column is-half">
+                            <label class="label">Deadline</label>
+                            <div class="control">
+                                <input id="task-deadline" class="input" type="date">
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="task-index">
+                </div>
+            </section>
+
+            <footer class="modal-card-foot">
+                <button id="save-task" class="button is-primary">Save</button>
+                <button id="cancel" class="button">Cancel</button>
+            </footer>
+        </div>
+
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
